@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drought Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Drought Prediction Web App</h1>
+    <form id="prediction-form">
+        Latitude: <input type="text" id="latitude" name="latitude"><br>
+        Longitude: <input type="text" id="longitude" name="longitude"><br>
+        <button type="button" onclick="makePrediction()">Predict</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function makePrediction() {
+            const latitude = document.getElementById('latitude').value;
+            const longitude = document.getElementById('longitude').value;
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ latitude, longitude })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = 'Prediction: ' + data.drought_prediction;
+            });
+        }
+    </script>
+</body>
+</html>

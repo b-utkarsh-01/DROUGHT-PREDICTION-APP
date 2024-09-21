@@ -1,0 +1,12 @@
+import joblib
+from sklearn.ensemble import RandomForestClassifier
+
+from preprocessing.train_model import X_train
+from preprocessing.train_model import y_train
+
+# Train your Random Forest model as usual
+rf_model = RandomForestClassifier(n_estimators=50, random_state=42)
+rf_model.fit(X_train, y_train)
+
+# Save the trained model
+joblib.dump(rf_model, 'model/rf_model.pkl')

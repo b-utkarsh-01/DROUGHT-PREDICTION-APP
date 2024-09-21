@@ -1,0 +1,9 @@
+How to Run the App
+Preprocess and Train the Model:
+
+Run python preprocessing/train_model.py to preprocess your dataset and train the Random Forest model.
+The trained model will be saved as rf_model.pkl in the model/ folder.
+Run the Flask Web App:
+
+Execute python run.py to start the Flask app.
+Go to http://127.0.0.1:5000/ in your web browser to interact with the app.
