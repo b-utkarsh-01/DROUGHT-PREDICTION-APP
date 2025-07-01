@@ -6,5 +6,5 @@ This is a web-based application that predicts the likelihood of drought based on
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/drought-prediction-app.git
+   git https://github.com/b-utkarsh-01/DROUGHT-PREDICTION-APP.git
    cd drought-prediction-app
